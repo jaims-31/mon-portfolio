@@ -40,14 +40,20 @@ export default function Home() {
         .project-card {
           transition: all 0.3s ease;
           border: 1px solid transparent;
-          cursor: pointer;
-          text-decoration: none;
           display: flex;
+          text-decoration: none;
         }
-        .project-card:hover {
+        .project-card-link {
+          cursor: pointer;
+        }
+        .project-card-link:hover {
           background-color: rgba(255, 255, 255, 0.03);
           border-color: rgba(255, 255, 255, 0.1);
           border-radius: 12px;
+        }
+        /* Style pour la carte non cliquable (Portfolio) */
+        .project-card-static {
+          cursor: default;
         }
         .tech-badge {
           display: inline-flex;
@@ -92,7 +98,6 @@ export default function Home() {
                             style={{ fontSize: '1.5rem' }}>About</span>
                     </a>
                   </li>
-                  {/* Section Experience masquée pour l'instant */}
                   <li className="mb-6">
                     <a className="group flex items-center py-3 no-underline" href="#projects">
                       <span className="mon-tiret"></span>
@@ -118,12 +123,12 @@ export default function Home() {
             <section id="projects" className="scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
               <div style={{ maxWidth: '700px', marginLeft: 'auto', marginRight: '60px', marginTop: '100px' }}>
                 
-                {/* PROJET 1 : PIANOREAD */}
+                {/* PROJET 1 : PIANOREAD (CLIQUABLE) */}
                 <a 
                   href="https://github.com/jaims-31/PianoRead" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="project-card group p-6 flex flex-row gap-8 items-start" 
+                  className="project-card project-card-link group p-6 gap-8 items-start" 
                   style={{ marginBottom: '60px' }}
                 >
                   <div style={{ 
@@ -155,16 +160,11 @@ export default function Home() {
                   </div>
                 </a>
 
-                {/* PROJET 2 : PORTFOLIO */}
-                <a 
-                  href="https://mon-portfolio-ashy-psi.vercel.app/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="project-card group p-6 flex flex-row gap-8 items-start"
-                >
+                {/* PROJET 2 : PORTFOLIO (STATIQUE - NON CLIQUABLE) */}
+                <div className="project-card project-card-static p-6 gap-8 items-start">
                   <div style={{ 
                     width: '100px', 
-                    height: '190px', 
+                    height: '180px', 
                     flexShrink: 0, 
                     backgroundColor: 'rgba(255, 255, 255, 0.05)',
                     display: 'flex',
@@ -177,8 +177,8 @@ export default function Home() {
                     💻
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-[#e2e8f0] font-bold group-hover:text-[#5eead4] transition-colors flex items-center gap-2" style={{ fontSize: '1.8rem', marginBottom: '8px' }}>
-                      Interactive Portfolio <span className="text-sm">↗</span>
+                    <h3 className="text-[#e2e8f0] font-bold" style={{ fontSize: '1.8rem', marginBottom: '8px' }}>
+                      Interactive Portfolio
                     </h3>
                     <p className="leading-relaxed text-[#94a3b8]" style={{ fontSize: '1.2rem', lineHeight: '1.5', marginBottom: '16px' }}>
                       A portfolio site built with Next.js and deployed on Vercel to showcase my projects.
@@ -189,7 +189,7 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                </a>
+                </div>
 
               </div>
             </section>
