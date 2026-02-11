@@ -92,13 +92,7 @@ export default function Home() {
                             style={{ fontSize: '1.5rem' }}>About</span>
                     </a>
                   </li>
-                  <li className="mb-6">
-                    <a className="group flex items-center py-3 no-underline" href="#experience">
-                      <span className="mon-tiret"></span>
-                      <span className="font-bold uppercase tracking-widest text-[#64748b] group-hover:text-[#e2e8f0] transition-all" 
-                            style={{ fontSize: '1.5rem' }}>Experience</span>
-                    </a>
-                  </li>
+                  {/* Section Experience masquée pour l'instant */}
                   <li className="mb-6">
                     <a className="group flex items-center py-3 no-underline" href="#projects">
                       <span className="mon-tiret"></span>
@@ -124,7 +118,7 @@ export default function Home() {
             <section id="projects" className="scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
               <div style={{ maxWidth: '700px', marginLeft: 'auto', marginRight: '60px', marginTop: '100px' }}>
                 
-                {/* PROJET 1 : PIANOREAD -> REDIRECTION GITHUB */}
+                {/* PROJET 1 : PIANOREAD */}
                 <a 
                   href="https://github.com/jaims-31/PianoRead" 
                   target="_blank" 
@@ -155,15 +149,17 @@ export default function Home() {
                     </p>
                     <div className="flex flex-wrap mt-4">
                       {["SwiftUI", "Firebase", "AVFoundation"].map((tech) => (
-                        <span key={tech} className="tech-badge" style={{ color: '#5eead4' }}>{tech}</span>
+                        <span key={tech} className="tech-badge">{tech}</span>
                       ))}
                     </div>
                   </div>
                 </a>
 
-                {/* PROJET 2 : PORTFOLIO (PRÊT POUR LIEN) */}
+                {/* PROJET 2 : PORTFOLIO */}
                 <a 
-                  href="#" 
+                  href="https://mon-portfolio-ashy-psi.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="project-card group p-6 flex flex-row gap-8 items-start"
                 >
                   <div style={{ 
@@ -185,11 +181,11 @@ export default function Home() {
                       Interactive Portfolio <span className="text-sm">↗</span>
                     </h3>
                     <p className="leading-relaxed text-[#94a3b8]" style={{ fontSize: '1.2rem', lineHeight: '1.5', marginBottom: '16px' }}>
-                      A portfolio site built with Gatsby.
+                      A portfolio site built with Next.js and deployed on Vercel to showcase my projects.
                     </p>
                     <div className="flex flex-wrap mt-4">
-                      {["Gatsby.js", "Styled Components", "React", "Netlify"].map((tech) => (
-                        <span key={tech} className="tech-badge" style={{ color: '#5eead4' }}>{tech}</span>
+                      {["Next.js", "Tailwind CSS", "Vercel"].map((tech) => (
+                        <span key={tech} className="tech-badge">{tech}</span>
                       ))}
                     </div>
                   </div>
